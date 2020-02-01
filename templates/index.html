@@ -1,0 +1,25 @@
+<html>
+    <head><title>TODO APP</title></head>
+<body>
+
+    <form method="POST" action="/todos/create">
+        <input type="text" name="description" />
+        <input type="submit" value="Create" />
+    </form>
+
+    <ul>
+        {% for d in data %}
+        <li>
+            {{d.description}}
+        </li>
+        {% endfor%}
+    </ul>
+
+    <script>
+        document.getElementById('form').onsubmit = function(e) {
+            e.preventDefault();
+        }
+    </script>
+</body>
+
+</html>
